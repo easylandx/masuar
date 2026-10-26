@@ -160,6 +160,88 @@
   .section-title em { color: var(--azul-cl); font-style: normal; }
   .section-sub { color: var(--texto-s); font-size: 1.05rem; max-width: 600px; line-height: 1.8; }
 
+
+  /* PROPIEDADES Y ALQUILERES */
+  #propiedades {
+    position: relative; overflow: hidden;
+    background:
+      radial-gradient(900px 420px at 12% 0%, rgba(245,214,140,0.38), transparent 60%),
+      radial-gradient(800px 420px at 92% 18%, rgba(0,214,192,0.14), transparent 60%),
+      linear-gradient(180deg, #FFFBF1 0%, #FFF6E2 55%, #FDF1D8 100%);
+    padding-bottom: 6.5rem;
+  }
+  #propiedades .container { position: relative; z-index: 1; }
+  .prop-head { text-align: center; max-width: 720px; margin: 0 auto; }
+  .prop-head .section-sub { margin: 0 auto; }
+  .prop-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(255,255,255,0.8); border: 1px solid rgba(201,154,46,0.35);
+    color: #A87B1C; padding: 0.4rem 1rem; border-radius: 50px;
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .prop-title em {
+    background: linear-gradient(90deg, #C99A2E, #E7B94F 45%, #00B5A3);
+    -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+    font-style: normal;
+  }
+  .btn-gold {
+    display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 1.8rem;
+    background: linear-gradient(135deg, #E7B94F, #C99A2E);
+    color: #fff; text-decoration: none; font-weight: 600; font-size: 1.02rem;
+    padding: 0.95rem 2.2rem; border-radius: 50px;
+    box-shadow: 0 10px 26px rgba(201,154,46,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 16px 34px rgba(201,154,46,0.45); }
+  .btn-gold svg { width: 20px; height: 20px; }
+
+  .prop-group { margin-top: 3.5rem; }
+  .prop-group-head { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1.4rem; }
+  .prop-group-icon {
+    width: 46px; height: 46px; border-radius: 14px; flex: none;
+    background: #fff; border: 1px solid rgba(201,154,46,0.3);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 16px rgba(201,154,46,0.15);
+  }
+  .prop-group-icon svg { width: 24px; height: 24px; color: #C99A2E; }
+  .prop-group-head h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--texto); line-height: 1.2; }
+  .prop-group-head small { display: block; font-family: 'Inter', sans-serif; font-size: 0.82rem; color: var(--texto-s); font-weight: 400; margin-top: 0.15rem; }
+  .prop-group-line { flex: 1; height: 1px; background: linear-gradient(90deg, rgba(201,154,46,0.45), transparent); min-width: 20px; }
+
+  .prop-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.3rem; }
+  .prop-card {
+    background: rgba(255,255,255,0.92); border: 1px solid rgba(201,154,46,0.22);
+    border-radius: var(--radius); padding: 1.5rem 1.4rem 1.3rem;
+    display: flex; flex-direction: column; gap: 1.1rem; position: relative; overflow: hidden;
+    box-shadow: 0 4px 18px rgba(168,123,28,0.07);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  }
+  .prop-card::before {
+    content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 4px;
+    background: linear-gradient(180deg, #E7B94F, #00B5A3);
+  }
+  .prop-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(168,123,28,0.17); border-color: rgba(201,154,46,0.5); }
+  .prop-desc { font-size: 1.02rem; font-weight: 600; color: var(--texto); line-height: 1.45; flex: 1; padding-left: 0.4rem; }
+  .prop-link {
+    align-self: flex-start; margin-left: 0.4rem;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.86rem; font-weight: 600; text-decoration: none;
+    color: var(--azul); background: #FFF3D6; border: 1px solid rgba(201,154,46,0.4);
+    padding: 0.5rem 1.1rem; border-radius: 50px; transition: background 0.2s, color 0.2s;
+  }
+  .prop-link:hover { background: var(--azul); color: #fff; border-color: var(--azul); }
+  .prop-link svg { width: 14px; height: 14px; }
+
+  .prop-skel { height: 128px; border-radius: var(--radius); border: 1px solid rgba(201,154,46,0.15);
+    background: linear-gradient(100deg, rgba(255,255,255,0.5) 30%, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0.5) 70%) #FFF6E2;
+    background-size: 200% 100%; animation: propShimmer 1.3s linear infinite; }
+  @keyframes propShimmer { to { background-position: -200% 0; } }
+  .prop-msg { text-align: center; color: var(--texto-s); padding: 1.2rem; background: rgba(255,255,255,0.7);
+    border: 1px dashed rgba(201,154,46,0.4); border-radius: var(--radius); grid-column: 1 / -1; }
+  .prop-msg a { color: var(--azul); font-weight: 600; }
+  .prop-wave { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 60px; display: block; }
+
   /* SERVICIOS */
   #servicios { background: var(--gris-cl); }
   .servicios-grid {
@@ -333,6 +415,7 @@
 <nav>
   <a class="nav-logo" href="#">Mas<span>uar</span></a>
   <ul class="nav-links">
+    <li><a href="#propiedades">Propiedades</a></li>
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#por-que">Nosotros</a></li>
     <li><a href="#valores">Valores</a></li>
@@ -351,7 +434,7 @@
   <h1>Tu propiedad, nuestra <em>dedicación</em>. Venta y alquiler vacacional en el Levante almeriense.</h1>
   <p>Masuar es la inmobiliaria de Mojácar especializada en venta de propiedades y gestión de alquiler vacacional. Transparencia, honestidad y acompañamiento en cada paso.</p>
   <div class="hero-btns">
-    <a href="#contacto" class="btn-primary">Hablar con Masuar</a>
+    <a href="https://web.whatsapp.com/send?phone=34646617615&text=Hola%20Masuar%2C%20buenos%20d%C3%ADas.%20Me%20gustar%C3%ADa%20solicitar%20m%C3%A1s%20informaci%C3%B3n%2C%20por%20favor.%20Quedo%20a%20la%20espera%20de%20vuestra%20respuesta.%20%C2%A1Muchas%20gracias%21" class="btn-primary" target="_blank" rel="noopener">Hablar con Masuar</a>
     <a href="https://easypagex.github.io/masuar/english.html" class="btn-secondary">ENGLISH</a>
   </div>
   <div class="hero-stats">
@@ -375,8 +458,49 @@
 </section>
 
 <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M0,40 C360,80 1080,0 1440,40 L1440,0 L0,0 Z" fill="#F4F8FB"/>
+  <path d="M0,40 C360,80 1080,0 1440,40 L1440,0 L0,0 Z" fill="#FFFBF1"/>
 </svg>
+
+<!-- PROPIEDADES Y ALQUILERES -->
+<section id="propiedades">
+  <div class="container">
+    <div class="prop-head">
+      <div class="prop-tag">✦ Alquiler vacacional &amp; venta</div>
+      <h2 class="section-title prop-title">Propiedades y <em>Alquileres</em></h2>
+      <p class="section-sub">Alojamientos para tus vacaciones en Mojácar y propiedades a la venta en el sur de Almería. Reserva o consulta directamente con nosotros.</p>
+      <a href="https://web.whatsapp.com/send?phone=34646617615&text=Hola%20Masuar%2C%20buenos%20d%C3%ADas.%20Me%20gustar%C3%ADa%20contratar%20directamente%20un%20alquiler%20o%20una%20propiedad.%20%C2%BFPodr%C3%ADais%20facilitarme%20m%C3%A1s%20informaci%C3%B3n%2C%20por%20favor%3F%20%C2%A1Muchas%20gracias%21" class="btn-gold" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Contrata directamente</a>
+    </div>
+
+    <div class="prop-group">
+      <div class="prop-group-head">
+        <div class="prop-group-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h3>Alquileres<small>Airbnb &amp; Booking.com</small></h3>
+        <div class="prop-group-line"></div>
+      </div>
+      <div class="prop-grid" id="alquileres-grid" aria-live="polite">
+        <div class="prop-skel"></div><div class="prop-skel"></div><div class="prop-skel"></div>
+      </div>
+    </div>
+
+    <div class="prop-group">
+      <div class="prop-group-head">
+        <div class="prop-group-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></svg></div>
+        <h3>Propiedades<small>En venta</small></h3>
+        <div class="prop-group-line"></div>
+      </div>
+      <div class="prop-grid" id="propiedades-grid" aria-live="polite">
+        <div class="prop-skel"></div><div class="prop-skel"></div><div class="prop-skel"></div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:3rem;">
+      <a href="https://web.whatsapp.com/send?phone=34646617615&text=Hola%20Masuar%2C%20buenos%20d%C3%ADas.%20Me%20gustar%C3%ADa%20contratar%20directamente%20un%20alquiler%20o%20una%20propiedad.%20%C2%BFPodr%C3%ADais%20facilitarme%20m%C3%A1s%20informaci%C3%B3n%2C%20por%20favor%3F%20%C2%A1Muchas%20gracias%21" class="btn-gold" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Contrata directamente</a>
+    </div>
+  </div>
+  <svg class="prop-wave" viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M0,60 L0,30 C360,70 1080,-10 1440,30 L1440,60 Z" fill="#F4F8FB"/>
+  </svg>
+</section>
 
 <!-- SERVICIOS -->
 <section id="servicios">
@@ -544,7 +668,7 @@
   <div class="container" style="max-width:920px; margin:0 auto;">
     <div class="contacto-grid">
 
-      <a href="https://wa.me/34646617615" class="contacto-card" target="_blank" rel="noopener">
+      <a href="https://web.whatsapp.com/send?phone=34646617615&text=Hola%20Masuar%2C%20buenos%20d%C3%ADas.%20Me%20gustar%C3%ADa%20solicitar%20m%C3%A1s%20informaci%C3%B3n%2C%20por%20favor.%20Quedo%20a%20la%20espera%20de%20vuestra%20respuesta.%20%C2%A1Muchas%20gracias%21" class="contacto-card" target="_blank" rel="noopener">
         <div class="contacto-icon">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.962-1.413A9.956 9.956 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.955 7.955 0 01-4.036-1.097l-.29-.172-2.947.84.852-2.877-.19-.296A7.957 7.957 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/></svg>
         </div>
@@ -554,7 +678,7 @@
         </div>
       </a>
 
-      <a href="mailto:info@masuar.es" class="contacto-card">
+      <a href="mailto:mannateji@gmail.com" class="contacto-card">
         <div class="contacto-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
@@ -562,7 +686,7 @@
         </div>
         <div>
           <h4>Email</h4>
-          <p>info@masuar.es<br><span style="font-size:0.82rem;opacity:0.75">Te respondemos pronto</span></p>
+          <p>mannateji@gmail.com<br><span style="font-size:0.82rem;opacity:0.75">Te respondemos pronto</span></p>
         </div>
       </a>
 
@@ -593,8 +717,7 @@
     <div class="contacto-cta">
       <p>¿Prefieres escribirnos directamente desde aquí?</p>
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href="https://wa.me/34646617615" class="btn-primary" target="_blank" rel="noopener">💬 Escríbenos por WhatsApp</a>
-        <a href="https://masuar.es" class="btn-secondary" target="_blank" rel="noopener">Visitar masuar.es</a>
+        <a href="https://web.whatsapp.com/send?phone=34646617615&text=Hola%20Masuar%2C%20buenos%20d%C3%ADas.%20Me%20gustar%C3%ADa%20solicitar%20m%C3%A1s%20informaci%C3%B3n%2C%20por%20favor.%20Quedo%20a%20la%20espera%20de%20vuestra%20respuesta.%20%C2%A1Muchas%20gracias%21" class="btn-primary" target="_blank" rel="noopener">💬 Escríbenos por WhatsApp</a>
       </div>
     </div>
   </div>
@@ -604,13 +727,146 @@
 <footer>
   <div class="footer-links">
     <a href="https://masuar.es" target="_blank" rel="noopener">masuar.es</a>
-    <a href="mailto:info@masuar.es">info@masuar.es</a>
-    <a href="https://wa.me/34646617615" target="_blank" rel="noopener">+34 646 617 615</a>
+    <a href="mailto:mannateji@gmail.com">mannateji@gmail.com</a>
+    <a href="https://web.whatsapp.com/send?phone=34646617615&text=Hola%20Masuar%2C%20buenos%20d%C3%ADas.%20Me%20gustar%C3%ADa%20solicitar%20m%C3%A1s%20informaci%C3%B3n%2C%20por%20favor.%20Quedo%20a%20la%20espera%20de%20vuestra%20respuesta.%20%C2%A1Muchas%20gracias%21" target="_blank" rel="noopener">+34 646 617 615</a>
     <a href="https://www.instagram.com/masuarinmobiliario" target="_blank" rel="noopener">Instagram</a>
   </div>
   <p><strong>Masuar</strong> — Mannas Lifestyle S.L. · Av. de Andalucía 16, 1º, 04638 Mojácar, Almería<br>
   Inmobiliaria &amp; Alquiler Vacacional · <span style="color:rgba(255,255,255,0.4)">© 2026 Masuar. Todos los derechos reservados.</span></p>
+  <p style="margin-top:1rem;font-size:0.8rem;">Web creada por <a href="https://easylandx.github.io" target="_blank" rel="noopener"><strong>EasyLandX</strong></a></p>
 </footer>
+
+
+<script>
+/* Propiedades y Alquileres: los datos se leen en vivo desde la hoja de Google Sheets.
+   Para cambiar los anuncios basta con editar la hoja (A = enlace, B = descripción). */
+(function () {
+  var SHEET_ID = '11n61zPjXYorhXFdV3omI1hlJOXhmqZuwDHVaZOxPSfs';
+  var WA = 'https://web.whatsapp.com/send?phone=34646617615&text=Hola%20Masuar%2C%20buenos%20d%C3%ADas.%20Me%20gustar%C3%ADa%20solicitar%20m%C3%A1s%20informaci%C3%B3n%2C%20por%20favor.%20Quedo%20a%20la%20espera%20de%20vuestra%20respuesta.%20%C2%A1Muchas%20gracias%21';
+  var alqEl = document.getElementById('alquileres-grid');
+  var proEl = document.getElementById('propiedades-grid');
+  if (!alqEl || !proEl) return;
+
+  var ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><polyline points="8 7 17 7 17 16"/></svg>';
+  var PREFIX = /^\s*(Airbnb Listing|Booking\.com Listing|Idealista Property)\s*[-\u2013\u2014:]\s*/i;
+
+  function platform(url, desc) {
+    var s = (url + ' ' + desc).toLowerCase();
+    if (s.indexOf('airbnb') > -1) return { k: 'alq', n: 'Airbnb' };
+    if (s.indexOf('booking.com') > -1) return { k: 'alq', n: 'Booking.com' };
+    if (s.indexOf('idealista') > -1) return { k: 'pro', n: 'Idealista' };
+    return null;
+  }
+
+  function parse(rows) {
+    var out = { alq: [], pro: [] };
+    rows.forEach(function (r) {
+      var url = String(r[0] == null ? '' : r[0]).trim();
+      var desc = String(r[1] == null ? '' : r[1]).trim();
+      if (!/^https?:\/\//i.test(url)) return;
+      var p = platform(url, desc);
+      if (!p) return;
+      desc = desc.replace(PREFIX, '').trim() || p.n;
+      out[p.k].push({ desc: desc, url: url, platform: p.n });
+    });
+    return out;
+  }
+
+  function card(item) {
+    var c = document.createElement('div');
+    c.className = 'prop-card';
+    var d = document.createElement('div');
+    d.className = 'prop-desc';
+    d.textContent = item.desc;
+    var a = document.createElement('a');
+    a.className = 'prop-link';
+    a.href = item.url;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.innerHTML = 'Ver en ' + item.platform + ' ' + ARROW;
+    c.appendChild(d);
+    c.appendChild(a);
+    return c;
+  }
+
+  function fill(el, items, emptyText) {
+    el.innerHTML = '';
+    if (!items.length) {
+      var m = document.createElement('div');
+      m.className = 'prop-msg';
+      m.textContent = emptyText;
+      el.appendChild(m);
+      return;
+    }
+    items.forEach(function (i) { el.appendChild(card(i)); });
+  }
+
+  function render(rows) {
+    var data = parse(rows);
+    fill(alqEl, data.alq, 'Pronto añadiremos nuevos alquileres.');
+    fill(proEl, data.pro, 'Pronto añadiremos nuevas propiedades.');
+  }
+
+  function fail() {
+    [alqEl, proEl].forEach(function (el) {
+      el.innerHTML = '';
+      var m = document.createElement('div');
+      m.className = 'prop-msg';
+      m.innerHTML = 'No hemos podido cargar el listado ahora mismo. <a href="' + WA + '" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> y te lo enviamos.';
+      el.appendChild(m);
+    });
+  }
+
+  /* 1) JSONP (no depende de CORS) */
+  function viaJsonp(done, error) {
+    var cb = '__masuarSheet' + Date.now();
+    var s = document.createElement('script');
+    var finished = false;
+    function end() { finished = true; try { delete window[cb]; } catch (e) { window[cb] = undefined; } if (s.parentNode) s.parentNode.removeChild(s); }
+    var timer = setTimeout(function () { if (!finished) { end(); error(); } }, 9000);
+    window[cb] = function (resp) {
+      if (finished) return;
+      clearTimeout(timer); end();
+      try {
+        var rows = (resp.table.rows || []).map(function (r) {
+          var c = r.c || [];
+          return [c[0] ? c[0].v : '', c[1] ? c[1].v : ''];
+        });
+        done(rows);
+      } catch (e) { error(); }
+    };
+    s.onerror = function () { if (!finished) { clearTimeout(timer); end(); error(); } };
+    s.src = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:json;responseHandler:' + cb + '&headers=0&_=' + Date.now();
+    document.head.appendChild(s);
+  }
+
+  /* 2) Respaldo: CSV con fetch */
+  function csv(text) {
+    var rows = [], row = [], cell = '', q = false;
+    for (var i = 0; i < text.length; i++) {
+      var ch = text[i];
+      if (q) {
+        if (ch === '"' && text[i + 1] === '"') { cell += '"'; i++; }
+        else if (ch === '"') q = false;
+        else cell += ch;
+      } else if (ch === '"') q = true;
+      else if (ch === ',') { row.push(cell); cell = ''; }
+      else if (ch === '\n') { row.push(cell); rows.push(row); row = []; cell = ''; }
+      else if (ch !== '\r') cell += ch;
+    }
+    row.push(cell); rows.push(row);
+    return rows;
+  }
+  function viaCsv(done, error) {
+    fetch('https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:csv&headers=0&_=' + Date.now())
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+      .then(function (t) { done(csv(t)); })
+      .catch(error);
+  }
+
+  viaJsonp(render, function () { viaCsv(render, fail); });
+})();
+</script>
 
 </body>
 </html>
