@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Masuar — Inmobiliaria & Alquiler Vacacional · Mojácar, Almería</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHRleHQgeD0iNTAlIiB5PSI1MiUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmb250LXNpemU9IjU0Ij7imIDvuI88L3RleHQ+PC9zdmc+">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -400,6 +401,18 @@
   footer strong { color: var(--blanco); }
   .footer-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem; }
 
+
+  .footer-indalo {
+    width: 25px; height: 25px; border-radius: 50%;
+    background: #fff; display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 0.75rem; overflow: hidden;
+    border: 2px solid rgba(255,255,255,0.85);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  }
+  .footer-indalo img {
+    display: block; width: 88%; height: 88%; object-fit: contain;
+  }
+
   /* RESPONSIVE */
   @media (max-width: 768px) {
     .nav-links { display: none; }
@@ -725,6 +738,9 @@
 
 <!-- FOOTER -->
 <footer>
+  <div class="footer-indalo" aria-label="Símbolo Indalo">
+    <img src="data:image/webp;base64,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" alt="Símbolo del Indalo">
+  </div>
   <div class="footer-links">
     <a href="" target="_blank" rel="noopener"></a>
     <a href="mailto:mannateji@gmail.com">mannateji@gmail.com</a>
